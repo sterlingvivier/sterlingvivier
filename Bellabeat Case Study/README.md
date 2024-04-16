@@ -50,13 +50,13 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
   print(da.head())
   print(da.shape)
-  print(da.dtype)
+  print(da.dtypes)
 ````
 
 ````
   print(wL.head())
   print(wL.shape)
-  print(wL.dtype)
+  print(wL.dtypes)
 ````
 ### Changing Datatypes
   For the following dataframes, I converted the ID column to a str variable and the ActivityDate/Date column(s) to a dateTime variable. 
@@ -64,8 +64,36 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
   da['Id'] = da['Id'].astype(str) 
   da['ActivityDate'] = pd.to_datetime(da['ActivityDate'],format='%m/%d/%Y')
+  da.dtypes
 ````
 ````
   wL['Id'] = wL['Id'].astype(str)
   wL['Date'] = pd.to_datetime(wL['Date'], format= 'mixed')
+  wL.dtypes
+````
+
+### Additional Cleaning/Analysis Prep
+  Further cleaning of the data included checking for duplicated values, null values, the count of unique values, and dropping irrelevant columns that would not be used for further analysis. 
+  
+````
+  da[da.duplicated()]
+````
+
+````
+  wL[wL.duplicated()]
+````
+
+````
+  print(da.isna().sum())
+  print(' ')
+  print(wL.isna().sum())
+````
+
+````
+  print(da['Id'].unique().size)
+  print(wL['Id'].unique().size)
+````
+
+````
+  wL.drop('Fat', axis= 1)
 ````
