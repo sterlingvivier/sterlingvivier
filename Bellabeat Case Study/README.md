@@ -135,13 +135,16 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   plt.bar(Day, Cal, color=np.random.rand(len(Day), 3))
   plt.axhline(y=da2['Calories'].describe().loc['mean'], c= 'black', label = "%.2f" % da2['Calories'].describe().loc['mean'])
 ````
-![CaloriesPerDay](CalDay(1).png)
+
+<a href="https://ibb.co/mNyL9B0"><img src="https://i.ibb.co/CP9kbt6/Cal-Day-1.png" alt="Cal-Day-1" border="0"></a>
+
 
 ````
   plt.figure(figsize= (10,5))
   plt.bar(Day, Steps, color = np.random.rand(len(Day), 3))
   plt.axhline(da2['TotalSteps'].describe().loc['mean'], c= 'black', label = "%.2f" % da2['TotalSteps'].describe().loc['mean'])
 ````
+<a href="https://ibb.co/xhwWZvP"><img src="https://i.ibb.co/K6BdnZR/StepDay.png" alt="StepDay" border="0"></a>
 
 ````
   meanLine= ((da2['TotalActiveMinutes'].describe().loc['mean'])/1440)*100
@@ -149,3 +152,5 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   plt.bar(Day, MinutesActivePerc, color = np.random.rand(len(Day), 3))
   plt.axhline(y= meanLine, c= 'black', label = "%.2f" % meanLine)
 ````
+
+<a href="https://ibb.co/hFRW6P6"><img src="https://i.ibb.co/DfDCJxJ/Active-Day.png" alt="Active-Day" border="0"></a>
