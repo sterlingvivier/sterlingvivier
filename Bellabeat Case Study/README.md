@@ -135,6 +135,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   plt.bar(Day, Cal, color=np.random.rand(len(Day), 3))
   plt.axhline(y=da2['Calories'].describe().loc['mean'], c= 'black', label = "%.2f" % da2['Calories'].describe().loc['mean'])
 ````
+![CaloriesPerDay](CalDay(1).png)
 
 ````
   plt.figure(figsize= (10,5))
