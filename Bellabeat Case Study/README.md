@@ -1,3 +1,4 @@
+````
   #IMPORTING LIBRARIES
   import numpy as np
   import scipy as sp
@@ -7,3 +8,4 @@
   
   #SETTING A STYLE FOR PLOTS
   plt.style.use("ggplot")
+````
