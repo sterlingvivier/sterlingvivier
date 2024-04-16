@@ -112,3 +112,70 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
   da['TotalActiveMinutes'] = da['LightlyActiveMinutes']+da['FairlyActiveMinutes']+da['VeryActiveMinutes']
 ````
+
+### Dropping Columns/Merging Data
+  I created a new dataframe that contained only columns that I would use for my analysis/visualations. Once created, I merged this dataframe with my weightLogInfo data.
+
+````
+  da2 = da.drop(['TrackerDistance','LoggedActivitiesDistance', 'VeryActiveDistance', 'ModeratelyActiveDistance',
+             'LightActiveDistance', 'SedentaryActiveDistance', 'VeryActiveMinutes', 
+              "FairlyActiveMinutes", 'LightlyActiveMinutes'], axis = 1 )
+````
+
+````
+  res = pd.concat([da2, wL])
+````
+
+## Charts/Analysis
+### Day of Week
+  I wanted to first see how averages of columns such as Calories, TotalSteps, and TimeActive changed throughout the days of the week. To do this, I grouped the day by each day of the week and calculated the different averages of each group. The code used and graphs produced are shown as follows: 
+
+````
+  DayGrp = da2.groupby(['DayOfWeek'])
+  CalByDay = DayGrp['Calories'].mean().sort_values()
+  CalByDay = CalByDay.to_frame()
+  CalByDay
+  
+  StepsByDay = DayGrp['TotalSteps'].mean().sort_values()
+  CalByDay['Steps'] = StepsByDay
+  
+  ActiveMins = ((DayGrp['TotalActiveMinutes'].mean().sort_values())/1440)*100
+  CalByDay['ActiveMin'] = ActiveMins
+
+````
+
+````
+  plt.figure(figsize= (10,5))
+  plt.bar(Day, Cal, color=np.random.rand(len(Day), 3))
+  plt.axhline(y=2303.609574, c= 'black', label = "y = 2302.61")
+  plt.legend(loc = (1.01,0.01))
+  plt.xlabel('Day of the Week')
+  plt.ylabel('Avg Calories Burned')
+  plt.title('Calories Burned per Day')
+  plt.show()
+  plt.close()
+````
+
+````
+  plt.figure(figsize= (10,5))
+  plt.bar(Day, Steps, color = np.random.rand(len(Day), 3))
+  plt.axhline(y=7637.910638, c= 'black', label = "y = 7637.91")
+  plt.legend(loc = (1.01,0.01))
+  plt.xlabel('Day of the Week')
+  plt.ylabel('Avg Steps')
+  plt.title('Avg Steps per Day')
+  plt.show()
+  plt.close()
+````
+
+````
+  plt.figure(figsize= (10,5))
+  plt.bar(Day, MinutesActivePerc, color = np.random.rand(len(Day), 3))
+  plt.axhline(y=(227.542553/1440)*100, c= 'black', label = f'y = 15.80')
+  plt.legend(loc = (1.01,0.01))
+  plt.xlabel('Day of the Week')
+  plt.ylabel('Percentage Active %')
+  plt.title('Percentage Active per Day')
+  plt.show()
+  plt.close()
+````
