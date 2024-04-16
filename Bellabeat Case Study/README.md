@@ -1,4 +1,4 @@
-In March of 2023 I completed the Google Data Analytics course which concluded with a choice of a capstone project. Below is my complete 
+In March of 2024 I completed the Google Data Analytics course which concluded with a choice of a capstone project. Below is my complete 
 analysis where I utilized Python to prepare, clean, and visualize my data. 
 
 # Introduction
