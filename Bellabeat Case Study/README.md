@@ -131,41 +131,15 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   I wanted to first see how averages of columns such as Calories, TotalSteps, and TimeActive changed throughout the days of the week. To do this, I grouped the day by each day of the week and calculated the different averages of each group. The code used and graphs produced are shown as follows: 
 
 ````
-  DayGrp = res.groupby(['DayOfWeek'])
-  CalByDay = DayGrp['Calories'].mean().sort_values()
-  CalByDay = CalByDay.to_frame()
-  CalByDay
-  
-  StepsByDay = DayGrp['TotalSteps'].mean().sort_values()
-  CalByDay['Steps'] = StepsByDay
-  
-  ActiveMins = ((DayGrp['TotalActiveMinutes'].mean().sort_values())/1440)*100
-  CalByDay['ActiveMin'] = ActiveMins
-
-````
-
-````
   plt.figure(figsize= (10,5))
   plt.bar(Day, Cal, color=np.random.rand(len(Day), 3))
   plt.axhline(y=da2['Calories'].describe().loc['mean'], c= 'black', label = "%.2f" % da2['Calories'].describe().loc['mean'])
-  plt.legend(loc = (1.01,0.01))
-  plt.xlabel('Day of the Week')
-  plt.ylabel('Avg Calories Burned')
-  plt.title('Calories Burned per Day')
-  plt.show()
-  plt.close()
 ````
 
 ````
   plt.figure(figsize= (10,5))
   plt.bar(Day, Steps, color = np.random.rand(len(Day), 3))
   plt.axhline(da2['TotalSteps'].describe().loc['mean'], c= 'black', label = "%.2f" % da2['TotalSteps'].describe().loc['mean'])
-  plt.legend(loc = (1.01,0.01))
-  plt.xlabel('Day of the Week')
-  plt.ylabel('Avg Steps')
-  plt.title('Avg Steps per Day')
-  plt.show()
-  plt.close()
 ````
 
 ````
@@ -173,10 +147,4 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   plt.figure(figsize= (10,5))
   plt.bar(Day, MinutesActivePerc, color = np.random.rand(len(Day), 3))
   plt.axhline(y= meanLine, c= 'black', label = "%.2f" % meanLine)
-  plt.legend(loc = (1.01,0.01))
-  plt.xlabel('Day of the Week')
-  plt.ylabel('Percentage Active %')
-  plt.title('Percentage Active per Day')
-  plt.show()
-  plt.close()
 ````
