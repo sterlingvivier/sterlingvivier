@@ -11,12 +11,25 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   - How can these trends found in smart-device usage be incorporated into Bellabeat's products to help inform the companies marketing strategies and decisons?
 
 # Data used
-
-# Project
+  For this project I used the **FitBit Fitness Tracker** dataset which was made available by Mobius on the website Kaggle. There are 18 different csv files in our dataset following 30 different users. For my analysis, I looked at the dailyActivty_merged csv which combined data from multiple different files into one. Upon further inspection during the analysis process, the csv was found to contain information from 33 distinct users. 
   
+  The data sheets contain data tracking heart rate, sleep time, weight, daily steps, daily activity and more. The data analyzed was collected between 03/12/2016–05/12/2016.
 
+# Analysis
+  For my case study, I specifically utilized the csv files labeled 
+  * DailyActivities_merged.csv
+  * WeightLogInfo_merged.csv
+  * minuteSleep_merged.csv
+  
+# Project
+### Loading Libraries
+  I utilized the following libraries for my cleaning, analysis, and visualations:
+  * numpy
+  * scipy
+  * pandas
+  * matplotlib
+  * seaborn
 ````
-  #IMPORTING LIBRARIES
   import numpy as np
   import scipy as sp
   import pandas as pd
@@ -25,4 +38,10 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   
   #SETTING A STYLE FOR PLOTS
   plt.style.use("ggplot")
+````
+### Importing Files
+  The following csv files were read into 3 dataframe variables using the pandas library:
+````
+  da = pd.read_csv('/kaggle/input/fitbit/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv')
+  wL = pd.read_csv('/kaggle/input/fitbit/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/weightLogInfo_merged.csv')
 ````
