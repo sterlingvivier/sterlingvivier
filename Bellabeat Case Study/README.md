@@ -45,3 +45,27 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   da = pd.read_csv('/kaggle/input/fitbit/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv')
   wL = pd.read_csv('/kaggle/input/fitbit/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/weightLogInfo_merged.csv')
 ````
+
+### Inspecting our Data
+````
+  print(da.head())
+  print(da.shape)
+  print(da.dtype)
+````
+
+````
+  print(wL.head())
+  print(wL.shape)
+  print(wL.dtype)
+````
+### Changing Datatypes
+  For the following dataframes, I converted the ID column to a str variable and the ActivityDate/Date column(s) to a dateTime variable. 
+
+````
+  da['Id'] = da['Id'].astype(str) 
+  da['ActivityDate'] = pd.to_datetime(da['ActivityDate'],format='%m/%d/%Y')
+````
+````
+  wL['Id'] = wL['Id'].astype(str)
+  wL['Date'] = pd.to_datetime(wL['Date'], format= 'mixed')
+````
