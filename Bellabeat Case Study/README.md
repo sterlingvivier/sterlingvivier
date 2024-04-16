@@ -97,3 +97,18 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
   wL.drop('Fat', axis= 1)
 ````
+### Adding Columns
+  I want to add a column in my DailyActivity dataframe (da) that shows which day of the week the activity was logged along with a number assigned to the day. 
+  * 0 = Monday, 6= Sunday
+
+````
+  da['DayOfWeek'] = da['ActivityDate'].dt.day_name()
+  da['NumDayOfWeek'] = da['ActivityDate'].dt.weekday 
+````
+
+  Additionally, I wanted to add a column in this dataframe that added up all the columns of activity time. 
+  * TotalActiveMinutes = LightlyActiveMinutes+FairlyActiveMinutes+VeryActiveMinutes
+
+````
+  da['TotalActiveMinutes'] = da['LightlyActiveMinutes']+da['FairlyActiveMinutes']+da['VeryActiveMinutes']
+````
