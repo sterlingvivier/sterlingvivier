@@ -160,6 +160,12 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 
 ### Individual User Avg vs User's Avg Calories
 
+<a href="https://ibb.co/tYZzF9y"><img src="https://i.ibb.co/Jrxqg9X/Steps-Cal-1.png" alt="Steps-Cal-1" border="0"></a>
+<a href="https://ibb.co/51FSz9n"><img src="https://i.ibb.co/XW8Kd43/Distance-Cal-1.png" alt="Distance-Cal-1" border="0"></a>
+<a href="https://ibb.co/GcQVft4"><img src="https://i.ibb.co/nzMDqnN/Minutes-Cal-1.png" alt="Minutes-Cal-1" border="0"></a>
+
+
+
 ### Sleep Analysis 
 
 ### Weight Log 
