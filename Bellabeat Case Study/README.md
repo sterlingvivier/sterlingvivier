@@ -1,8 +1,8 @@
 In March of 2024 I completed the Google Data Analytics course which concluded with a choice of a capstone project. Below is my complete 
 analysis where I utilized Python to prepare, clean, and visualize my data. 
 # Links 
-Link to the full kaggle/jupyter notebook file 
-Link to a dashboard created in Tableu
+* Link to the full kaggle/jupyter notebook file 
+* Link to a dashboard created in Tableu
 
 # Introduction
   Bellabeat is a high-tech manufacturer of health-focused products for women. Since 2013, they have been successful in this market, however, they have the ability to grow into a global-player. The co-founder believes that analyzing smart device fitness data could help unlock new growth opportunities for the company. It has been asked to analyze one of Bellabeat's products in order to gain more insights for the company.
