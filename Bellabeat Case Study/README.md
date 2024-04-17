@@ -1,7 +1,7 @@
 In March of 2024 I completed the Google Data Analytics course which concluded with a choice of a capstone project. Below is my complete 
 analysis where I utilized Python to prepare, clean, and visualize my data. 
 # Links 
-* Link to the full kaggle/jupyter notebook file 
+* Link to the full [kaggle/jupyter notebook](https://www.kaggle.com/code/sterlingvivier/final-bellabeat?scriptVersionId=172555504) 
 * Link to a dashboard created in Tableu
 
 # Introduction
