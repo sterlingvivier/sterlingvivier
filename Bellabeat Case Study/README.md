@@ -208,8 +208,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   plt.ylabel('User Count')
   plt.title('User Distribution of Time Asleep')
 ````
-
-<a href="https://ibb.co/xj9rVNQ"><img src="https://i.ibb.co/VSnkXs8/Sleep-Distribution-1.png" alt="Sleep-Distribution-1" border="0"></a>
+<a href="https://ibb.co/xYJKbD2"><img src="https://i.ibb.co/5kBX361/barSleep.png" alt="barSleep" border="0"></a>
 
 ````
   plt.pie(counts, labels =lab, colors = snb.color_palette('pastel'), autopct='%.0f%%')
