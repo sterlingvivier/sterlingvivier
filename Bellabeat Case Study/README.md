@@ -216,6 +216,8 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   plt.show()
 ````
 
+<a href="https://ibb.co/TMj7dfz"><img src="https://i.ibb.co/zV9BDMK/piechart.png" alt="piechart" border="0"></a>
+
 ### Weight Log 
 
 | Id         |   WeightPoundAvg |   BMIAvg | BMIClass   |
