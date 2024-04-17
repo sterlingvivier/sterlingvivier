@@ -158,13 +158,11 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ### Totals vs Total Calories
   I next wanted to see how different totals were related to the amount of calories being burned by users. To do this, I compared the total amount of steps taken, the total distance, and the total time spent active. Below are the code snippets and graphs produced: 
 
-### Individual User Avg vs User's Avg Calories
-
 <a href="https://ibb.co/tYZzF9y"><img src="https://i.ibb.co/Jrxqg9X/Steps-Cal-1.png" alt="Steps-Cal-1" border="0"></a>
 <a href="https://ibb.co/51FSz9n"><img src="https://i.ibb.co/XW8Kd43/Distance-Cal-1.png" alt="Distance-Cal-1" border="0"></a>
 <a href="https://ibb.co/GcQVft4"><img src="https://i.ibb.co/nzMDqnN/Minutes-Cal-1.png" alt="Minutes-Cal-1" border="0"></a>
 
-
+### Individual User Avg vs User's Avg Calories
 
 ### Sleep Analysis 
 
