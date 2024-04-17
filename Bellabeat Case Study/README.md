@@ -171,3 +171,15 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ### Sleep Analysis 
 
 ### Weight Log 
+
+| Id         |   WeightPoundAvg |   BMIAvg | BMIClass   |
+|------------|------------------|----------|------------|
+| 1503960366 |          115.963 |  22.65   | average    |
+| 2873212765 |          125.663 |  21.57   | average    |
+| 6962181067 |          135.702 |  24.028  | average    |
+| 4558609924 |          153.53  |  27.214  | overweight |
+| 4319703577 |          159.504 |  27.415  | overweight |
+| 8877689391 |          187.714 |  25.4871 | overweight |
+| 5577150313 |          199.959 |  28      | overweight |
+| 1927972279 |          294.317 |  47.54   | obese      |
+
