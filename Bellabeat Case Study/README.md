@@ -160,20 +160,61 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 
 ### Totals vs Total Calories
   I next wanted to see how different totals were related to the amount of calories being burned by users. To do this, I compared the total amount of steps taken, the total distance, and the total time spent active. Below are the code snippets and graphs produced: 
+  
+````
+   snb.scatterplot(data = da2, x = 'TotalSteps', y = 'Calories',
+                  hue = 'ActiveClass', palette = 'crest').set_title('Total Steps vs Total Calories')
+````
 
 <a href="https://ibb.co/tYZzF9y"><img src="https://i.ibb.co/Jrxqg9X/Steps-Cal-1.png" alt="Steps-Cal-1" border="0"></a>
+
+````
+  snb.scatterplot(data = da2, x = 'TotalDistance', y = 'Calories',
+                  hue = 'ActiveClass', palette = 'crest').set_title('Total Distance vs Total Calories')
+````
+
 <a href="https://ibb.co/51FSz9n"><img src="https://i.ibb.co/XW8Kd43/Distance-Cal-1.png" alt="Distance-Cal-1" border="0"></a>
+
+````
+  snb.scatterplot(data = da2, x = 'TotalActiveMinutes', y = 'Calories',
+                  hue = 'ActiveClass', palette = 'crest').set_title('Total Active Minutes vs Total Calories')
+````
 <a href="https://ibb.co/GcQVft4"><img src="https://i.ibb.co/nzMDqnN/Minutes-Cal-1.png" alt="Minutes-Cal-1" border="0"></a>
 
 ### Individual User Avg vs User's Avg Calories
 
+````
+  for i in range (len(result['TotalStepsAvg'])):
+      snb.regplot(data = result, x = "TotalStepsAvg", y = "CaloriesAvg",
+          scatter_kws = {"color": np.random.rand(len(result['TotalStepsAvg']), 3)},
+          label = f"USER {i+1}", ci = None)
+````
+
 <a href="https://ibb.co/MMkv9rn"><img src="https://i.ibb.co/LndFvmS/Avg-Steps-User-2.png" alt="Avg-Steps-User-2" border="0"></a>
+
+````
+  for i in range (len(result['TotalMinAvg'])):
+      snb.regplot(data = result, x = "TotalMinAvg", y = "CaloriesAvg",
+          scatter_kws = {"color": np.random.rand(len(result['TotalMinAvg']), 3)},
+          label = f"USER {i+1}", ci = None)
+  ````
 
 <a href="https://ibb.co/60gytyQ"><img src="https://i.ibb.co/B2qf6fk/Avg-Mins-User-1.png" alt="Avg-Mins-User-1" border="0"></a>
 
 ### Sleep Analysis 
 
+````
+  plt.bar(lab, counts, color = np.random.rand(len(lab), 3))
+  plt.ylabel('User Count')
+  plt.title('User Distribution of Time Asleep')
+````
+
 <a href="https://ibb.co/xj9rVNQ"><img src="https://i.ibb.co/VSnkXs8/Sleep-Distribution-1.png" alt="Sleep-Distribution-1" border="0"></a>
+
+````
+  plt.pie(counts, labels =lab, colors = snb.color_palette('pastel'), autopct='%.0f%%')
+  plt.show()
+````
 
 ### Weight Log 
 
