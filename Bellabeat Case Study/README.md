@@ -173,6 +173,8 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 
 ### Sleep Analysis 
 
+<a href="https://ibb.co/xj9rVNQ"><img src="https://i.ibb.co/VSnkXs8/Sleep-Distribution-1.png" alt="Sleep-Distribution-1" border="0"></a>
+
 ### Weight Log 
 
 | Id         |   WeightPoundAvg |   BMIAvg | BMIClass   |
