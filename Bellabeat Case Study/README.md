@@ -184,4 +184,5 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 | 1927972279 |          294.317 |  47.54   | obese      |
 
 # Summary
-  The charts produced for each day of the week consistently show that user's tend to be most active on Tuesdays' and Saturday's, with Sunday's being the least active day. From this data one recommendation for Bellabeat would be to send notifcations on this day to be active/complete some health goal. Additionally, Bellabeat should create incentives for users who do meet their activity goals and to help promote usage with the app/motivation on these "lazier" days. 
+  1. The charts produced for each day of the week consistently show that user's tend to be most active on Tuesdays' and Saturday's, with Sunday's being the least active day. From this data one recommendation for Bellabeat would be to send notifcations on this day to be active/complete some health goal. Additionally, Bellabeat should create incentives for users who do meet their activity goals and to help promote usage with the app/motivation on these "lazier" days.
+  2. User's that take more steps tend to burn more calories. One app reminder can be to take a quick pause from whatever one is doing whether it be working, watching tv, etc, and to go on a brisk 5-10 minute walk. 
