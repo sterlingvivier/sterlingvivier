@@ -210,6 +210,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
                   hue = 'ActiveClass', palette = 'crest').set_title('Total Steps vs Total Calories')
 ````
 
+
 <a href="https://ibb.co/tYZzF9y"><img src="https://i.ibb.co/Jrxqg9X/Steps-Cal-1.png" alt="Steps-Cal-1" border="0"></a>
 
 ````
@@ -217,7 +218,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
                   hue = 'ActiveClass', palette = 'crest').set_title('Total Distance vs Total Calories')
 ````
 
-<a href="https://ibb.co/51FSz9n"><img src="https://i.ibb.co/XW8Kd43/Distance-Cal-1.png" alt="Distance-Cal-1" border="0"></a>
+<a href="https://ibb.co/51FSz9n"><img src="https://www.kaggleusercontent.com/kf/172605520/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..far1QiPSwnA8X7FDUeagHQ.NSI6pwogg90SDLdAwP73K7HpK71N0Eh3cPeevC57OagV5RyzetWiMbFL3nL7Tlw0KfOYktMsra6Fy2MRPMcxtuwMjru9cq1T231ZKVqYMrAbav6TpONbVSKeA7SaCNV9f_CGtl_b1hQTEAxsM6T2NN_m8u-qpWCg3KpDEpgS6cd0dgf3eiKhWZ37H5ZWqTIn7bxL40f6votwVDXJZWV07BjDPrdBrpiTscyLk0Jc07leDE3BBjjCBYsn8TWMZDzm__MVgGM9Mr2YfdpvIAtxqLcLDziw21glMP0HFGA84PdMYuIqW8cINeNQg4A2jO2qvCSdJsNNrufKLNP_wZDLQXBzvTyPrx82PceEfEokT89BzysT9BciGAu5Tk2C39TkzRkjZcpGJNMkcE6MRHUGgfKyjbJ3_SDL42gDVCWGJr1ENTss7xJcfE0sX0IV3U8hXjkXmfpDgo1M3nHnDntE6e_tbEc2h1nr4LNDVP4XEhD37BOehaFIpRf6wrbCnxF2C5a-vsyC7j_SizTNwnCjybKJ03Lzwilz8jIAHfswiziNetKliZUl9mh3nF2SkAuZHAga_3MKjF8a_aACp8mLAW5oLlGwif80nL2BeTdkjv82kU7QIiVK6T-N46zJHWZTwujX1Seic5e4PMOmWaHKQg.LAP0O7o2ut8ND2V4bmCclA/DistanceCal.png" alt="Distance-Cal-1" border="0"></a>
 
 ````
   snb.scatterplot(data = da2, x = 'TotalActiveMinutes', y = 'Calories',
