@@ -1,7 +1,7 @@
 In March of 2024 I completed the Google Data Analytics course which concluded with a choice of a capstone project. Below is my complete 
 analysis where I utilized Python to prepare, clean, and visualize my data. 
 # Links 
-* Link to the full [kaggle/jupyter notebook](https://www.kaggle.com/code/sterlingvivier/final-bellabeat?scriptVersionId=172555504) 
+* Link to the full [kaggle/jupyter notebook](https://www.kaggle.com/code/sterlingvivier/final-bellabeat/notebook) 
 * Link to a dashboard created in Tableu
 
 # Introduction
@@ -47,6 +47,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
   da = pd.read_csv('/kaggle/input/fitbit/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/dailyActivity_merged.csv')
   wL = pd.read_csv('/kaggle/input/fitbit/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/weightLogInfo_merged.csv')
+  sleep = pd.read_csv('/kaggle/input/fitbit/mturkfitbit_export_4.12.16-5.12.16/Fitabase Data 4.12.16-5.12.16/sleepDay_merged.csv')
 ````
 
 ### Inspecting our Data
@@ -61,6 +62,13 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   print(wL.shape)
   print(wL.dtypes)
 ````
+
+````
+  print(sleep.head())
+  print(sleep.shape)
+  print(sleep.dtypes)
+
+````
 ### Changing Datatypes
   For the following dataframes, I converted the ID column to a str variable and the ActivityDate/Date column(s) to a dateTime variable. 
 
@@ -73,6 +81,11 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   wL['Id'] = wL['Id'].astype(str)
   wL['Date'] = pd.to_datetime(wL['Date'], format= 'mixed')
   wL.dtypes
+````
+````
+  sleep['Id'] = sleep['Id'].astype(str)
+  sleep['SleepDay'] = pd.to_datetime(sleep["SleepDay"], format= 'mixed')
+  sleep.dtypes
 ````
 
 ### Additional Cleaning/Analysis Prep
@@ -88,17 +101,23 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 
 ````
   print(da.isna().sum())
-  print(' ')
   print(wL.isna().sum())
+  print(sleep.isna().sum())
 ````
 
 ````
   print(da['Id'].unique().size)
   print(wL['Id'].unique().size)
+  print(sleep['Id].nunique())
 ````
 
 ````
   wL.drop('Fat', axis= 1)
+````
+
+````
+  sleep[sleep.duplicated()]
+  sleep.drop_duplicates(inplace = True)
 ````
 ### Adding Columns
   I want to add a column in my DailyActivity dataframe (da) that shows which day of the week the activity was logged along with a number assigned to the day. 
@@ -116,6 +135,22 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   da['TotalActiveMinutes'] = da['LightlyActiveMinutes']+da['FairlyActiveMinutes']+da['VeryActiveMinutes']
 ````
 
+  Adding conditions on how active one is, taking into account a healthy amount of time to sleep/rest during the day
+````
+  con1 = [da['SedentaryMinutes'] <=700 , (da['SedentaryMinutes']>700) & (da['SedentaryMinutes'] <=1100),
+                da['SedentaryMinutes'] > 1100]
+  values1 = ['Very Active', 'Active', 'Sedentary']
+  da['ActiveClass'] = np.select(con1, values1)
+````
+
+  Adding columns to our sleep dataframe for day of the week and how long an individual slept for in terms of hours. 
+
+````
+  sleep['DayOfWeek'] = sleep['SleepDay'].dt.day_name()
+  sleep['Hours'] = sleep['TotalMinutesAsleep']/60
+````
+
+
 ### Dropping Columns/Merging Data
   I created a new dataframe that contained only columns that I would use for my analysis/visualations. Once created, I merged this dataframe with my weightLogInfo data.
 
@@ -125,13 +160,17 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
               "FairlyActiveMinutes", 'LightlyActiveMinutes'], axis = 1 )
 ````
 
+  Now, I combined all three dataframes together into one in order to be able to group together data from different files in my analysis. 
+  
 ````
-  res = pd.concat([da2, wL])
+  res = pd.concat([da2, wL, sleep])
 ````
 
 ## Charts/Analysis
+
 ### Day of Week
   I wanted to first see how averages of columns such as Calories, TotalSteps, and TimeActive changed throughout the days of the week. To do this, I grouped the day by each day of the week and calculated the different averages of each group. The code used and graphs produced are shown as follows: 
+
 
 ````
   plt.figure(figsize= (10,5))
@@ -139,8 +178,10 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
   plt.axhline(y=da2['Calories'].describe().loc['mean'], c= 'black', label = "%.2f" % da2['Calories'].describe().loc['mean'])
 ````
 
+
 <a href="https://ibb.co/mNyL9B0"><img src="https://i.ibb.co/CP9kbt6/Cal-Day-1.png" alt="Cal-Day-1" border="0"></a>
 
+* This first figure shows that user's are below the average on Thursday and Sunday and above average the rest of the week. Saturday and Tuesday have the highest values, indicating that user's are burning more calories on these days. 
 
 ````
   plt.figure(figsize= (10,5))
@@ -149,6 +190,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
 <a href="https://ibb.co/xhwWZvP"><img src="https://i.ibb.co/K6BdnZR/StepDay.png" alt="StepDay" border="0"></a>
 
+* Once again, the days that fall below the average line are Sunday and Thursday. Additionally, Friday and Wednesday are below the average, with only Monday, Tuesday, and Saturday being higher. 
 ````
   meanLine= ((da2['TotalActiveMinutes'].describe().loc['mean'])/1440)*100
   plt.figure(figsize= (10,5))
@@ -157,6 +199,8 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
 
 <a href="https://ibb.co/hFRW6P6"><img src="https://i.ibb.co/DfDCJxJ/Active-Day.png" alt="Active-Day" border="0"></a>
+
+* Our last figure follows the same trend seen in the first two charts. Saturday and Tuesday are above the average line. Although the amount of steps were lower on friday, the % of time spent active is above the mean line. This indicates that user's may still be active on this day however may be doing other workouts/activity besides just walking. 
 
 ### Totals vs Total Calories
   I next wanted to see how different totals were related to the amount of calories being burned by users. To do this, I compared the total amount of steps taken, the total distance, and the total time spent active. Below are the code snippets and graphs produced: 
@@ -201,6 +245,8 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 
 <a href="https://ibb.co/60gytyQ"><img src="https://i.ibb.co/B2qf6fk/Avg-Mins-User-1.png" alt="Avg-Mins-User-1" border="0"></a>
 
+* Both charts demonstrate a somewhat positive correlation between the avg quantities and the amount of calories burned by each user. Due to the size of our data and not having that many distinct user's in our dataset, we are unable to determine an accurate conclusion. Many users that took more steps/were more active did tend to burn more calories on avg, however, the datasets still contained a few outliers. The amount of calories burned is also dependent on a variaty of different factors including one's height, age, muscle mass, etc. 
+
 ### Sleep Analysis 
 
 ````
@@ -216,6 +262,8 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
 ````
 
 <a href="https://ibb.co/TMj7dfz"><img src="https://i.ibb.co/zV9BDMK/piechart.png" alt="piechart" border="0"></a>
+
+* The graphs and charts show that just about half of the user's in this dataset are obtaining a healthy amount of sleep on avg. Getting the proper amount of sleep can have many health benefits and may be a factor in why other datasets have outliers. The min in the dataset was 1.02, meaning one of the users is severely under the recommended time. The amount of sleep can have many affects on an individual physically and mentally. 
 
 ### Weight Log 
 
