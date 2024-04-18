@@ -235,7 +235,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
           label = f"USER {i+1}", ci = None)
 ````
 
-<a href="https://ibb.co/MMkv9rn"><img src="https://i.ibb.co/LndFvmS/Avg-Steps-User-2.png" alt="Avg-Steps-User-2" border="0"></a>
+<a href="https://ibb.co/MMkv9rn"><img src="https://www.kaggleusercontent.com/kf/172605520/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..x3X_MNqYiE5y_0WHT71M6Q.271c5lpfr4NCd33pvbYvWBSjKyXhpLiXcTYeXZ_12iwbKkyFiMzJroYYmJ2SQdRP7GUGvxTcOMCuNH2P0BvHtWpf9Yt8bjY1FuUVu4JcDFr6185GHf0n9HnbazT1hVIYxBlaxgQgy8pZIHJTWrbHtM3BU9T5ELKNDy99iK3vjcDh8CiOzvPemGbnOmo_JPy90Kvlw8fcNCQIs4S4u4Fl7dB7SSlgU0-NHz7PGnN0ehLLZ2WpQJySOdUr2LBSQ8iPwvyfH21vBo4OzeQpoXDnncDDoVirPSnzhaeM35xd2l2bg0eJ8814SFEK3Y-WefInw-DrxF0AbX00w2XU1E6uOY2Q1ay2nhPcWZ-Tzm_6-0ITcB6J7iWIMDMblzLmvT29VPI4nrQqmu8-PGlov9jCaRgifdl29B9K2URIo01oDGevvvn3x2TnRioVE59SVLcwKVLBfLSUNKbzBO8tRCwwES3B9f1FeSRAD7h2oGFfgWbWHIFwD7WVJA-RfKRahRPDClqegPjw1SfWhP0HwDqnXBt87FIjEokl1lbL0np0Gopn7Q8Ian2X0I-BPkjVhBB229emNAvt3k7aFeyU2unf8O5rdn4x3zT4YxOPe5mdzb26ceIKn5DiHghl2ovb6kHHJsvV-V09JUB5frds-EbtJw.t_gU9cMFbfEd-ngkhrnKiQ/AvgStepsUser.png" alt="Avg-Steps-User-2" border="0"></a>
 
 ````
   for i in range (len(result['TotalMinAvg'])):
@@ -244,7 +244,7 @@ analysis where I utilized Python to prepare, clean, and visualize my data.
           label = f"USER {i+1}", ci = None)
   ````
 
-<a href="https://ibb.co/60gytyQ"><img src="https://i.ibb.co/B2qf6fk/Avg-Mins-User-1.png" alt="Avg-Mins-User-1" border="0"></a>
+<a href="https://ibb.co/60gytyQ"><img src="https://www.kaggleusercontent.com/kf/172605520/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..hpx8QnqDigSGXyyEkbzaFw.2qB9WDlqlWf8EbEahOWfSZQG-ZdgHOaovP1jV3q3iWoYCtCJjnSa--2LPoNIsEqZVmxPKAdrclufX-y08dMGzlMOBQUNzRed10-hWTZdG8XUiXc-SZYQH5LB8N82fWczNzGfYLMBPYyXTpM0-nm_G0n5cEIHKnVfRRW1Ff5AgiI6KfsDSXkya6G7SjRQKj_30ZMx_BptcoQoBB6b2MqeRmh6kaAkIJWqLDFpB4rXkfUQpVMdBr4g6uVE8aW3U_BZ4kZRBPmw5fISYH4x9BdGGESmP3O9W8vypYP6AosxObVW3T_N8lHXnS2eZcmXoXPg96-pK6WJX260RJUBzVdXdv6ex--7NFVVm3QfwT4nqEr69jvB5LIEHSyWApiCa-18V2V-byxU_Iko8iI8dELXl8Div9dWt9C8xVmDmqql2OD4xr6vsKYXILTtWcMdBO_rSt7Cf4kXsbZoaRf4yzjgLs7QSXPyCrpFQf_T8xZAyRpRtSMudqPpRUetXGnnJeHDaN6FFwcKGnisKJMhEG9vHDdseVWW_obXb68HBmzDwFd7t6Hyvip64vjhFYOD5MJPKoE2g3pdLcxu27VyQTa_eDX-Bw4_o9bPlfs9qoQrzVm225muaL2gRqMRpSfFO2rH4-Y0efCj_YcMQ4ckyBF8Yw.jYOTh_Jag7X3axrLg35XKQ/AvgMinsUser.png" alt="Avg-Mins-User-1" border="0"></a>
 
 * Both charts demonstrate a somewhat positive correlation between the avg quantities and the amount of calories burned by each user. Due to the size of our data and not having that many distinct user's in our dataset, we are unable to determine an accurate conclusion. Many users that took more steps/were more active did tend to burn more calories on avg, however, the datasets still contained a few outliers. The amount of calories burned is also dependent on a variaty of different factors including one's height, age, muscle mass, etc. 
 
